@@ -11,14 +11,13 @@ module.exports = (sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        team_name: {
-            type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
-        },
-        number_of_unlocked_achievements: {
+        project_id: {
             type: DataTypes.INTEGER,
-            defaultValue: 0
+            allowNull: false,
+        },
+        project_name: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         gitlab_group: {
             type: DataTypes.STRING,
@@ -27,7 +26,8 @@ module.exports = (sequelize) => {
         year: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        ...require('./Teamstats')
 
     });
 }

@@ -8,8 +8,6 @@ function setupAssociations(sequelize) {
 
     team.belongsToMany(achievement, { through: 'team_achievements' })
     achievement.belongsToMany(team, { through: 'team_achievements'})
-    //Team.Achievement = Team.hasMany(Achievement)
 }
-
 
 module.exports = setupAssociations

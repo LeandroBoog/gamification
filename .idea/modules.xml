@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gameification.iml" filepath="$PROJECT_DIR$/.idea/gameification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gameification-hook.iml" filepath="$PROJECT_DIR$/.idea/gameification-hook.iml" />
     </modules>
   </component>
 </project>

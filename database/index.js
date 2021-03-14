@@ -1,7 +1,7 @@
 
 const config = require('../config')
 const { Sequelize } = require('sequelize');
-const setupAssociations  = require('./setupAssociations')
+const setupAssociations = require('./setupAssociations')
 
 const sequelize = new Sequelize({
     dialect: "sqlite",

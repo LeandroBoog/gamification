@@ -1,3 +1,5 @@
-config.js
+./config.js
 
-tmp
+node_modules/
+.npm
+.idea/
