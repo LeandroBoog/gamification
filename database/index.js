@@ -5,7 +5,7 @@ const setupAssociations = require('./setupAssociations')
 
 const sequelize = new Sequelize({
     dialect: "sqlite",
-    storage: config.DB_PATH || './gameification.sqlite',
+    storage: config.DB_PATH,
     define: { freezeTableName: true }
 });
 

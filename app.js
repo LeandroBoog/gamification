@@ -1,4 +1,6 @@
 
+const config = require('./config')
+
 const express = require('express')
 const app = express()
 
@@ -9,12 +11,29 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.post('/', (req, res) => {
-    console.log(req.body)
+const webhookPath = new URL(config.WEBHOOK_URL).pathname
+app.post(webhookPath, async (req, res) => {
+
     res.send('Recieved POST')
+    const data = req.body
+    console.log(data)
+    for(const commit of data.commits) {
+        console.log(commit.added)
+        console.log(commit.modified)
+    }
+
 })
 
-const PORT = 3000
-app.listen(PORT, () => {
-    console.log(`Example app listening at http://tl.ddns.timoschwarzer.com:${PORT}`)
+const server = app.listen(config.PORT, () => {
+    console.log(`Example app listening at http://tl.ddns.timoschwarzer.com:${config.PORT}`)
 })
+
+process.on('SIGTERM', () => {
+    server.close(() => {
+        console.log('Received SIGTERM, Server terminated')
+    })
+})
+
+// This initializes the database by getting all the projects of the given gitlab group
+const init = require('./lib/init')
+init()

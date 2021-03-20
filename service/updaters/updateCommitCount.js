@@ -1,5 +1,5 @@
 
-function updateCommitCount(webHookData, team) {
+function updateCommitCount({ team }) {
     team.number_of_commits += 1
 }
 

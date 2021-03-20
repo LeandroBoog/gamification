@@ -1,5 +1,5 @@
 
-function typewriter(webHookData, team) {
+function typewriter({ team }) {
     return team.number_of_commits >= 50
 }
 

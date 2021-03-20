@@ -1,5 +1,5 @@
 
-function nightOwl(webHookData, team) {
+function nightOwl({ team }) {
     const teamAverage = team.average_commit_time
     const hours = parseInt(teamAverage.split(':')[0])
 

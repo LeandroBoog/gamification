@@ -14,6 +14,7 @@ module.exports = (sequelize) => {
         project_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            unique: true
         },
         project_name: {
             type: DataTypes.STRING,

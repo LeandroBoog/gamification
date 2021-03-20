@@ -1,5 +1,5 @@
 
-function updateAverageCommitTime(webHookData, team) {
+function updateAverageCommitTime({ webHookData, team }) {
 
     const timestampOfCommit = webHookData.commits[0].timestamp
 
@@ -17,10 +17,24 @@ function calcAverageCommitTime(n, newTime, oldTime) {
     const oldHours = parseInt(oldTime[0])
     const oldMinutes = parseInt(oldTime[1])
 
-    const avgMinutes = (oldMinutes + newMinutes) / n
-    const avgHours = (oldHours + newHours) / n
+    let avgMinutes = parseInt(((oldMinutes * (n-1)) + newMinutes) / n)
+    let avgHours = ((oldHours * (n-1)) + newHours) / n
 
+    const minuteCarryOver = parseInt((avgHours % 1).toFixed(2) * 60)
+    avgHours = parseInt(avgHours)
+
+    avgMinutes += minuteCarryOver
+    if(avgMinutes >= 60) {
+        avgMinutes -= 60
+        avgHours += 1
+    }
+    if(avgMinutes < 10) {
+        avgMinutes = `0${avgMinutes}`
+    }
     return `${avgHours}:${avgMinutes}`
 }
 
 module.exports = updateAverageCommitTime
+
+
+

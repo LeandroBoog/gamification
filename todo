@@ -1,0 +1,26 @@
+
+1. Controller + Routen
+2. Hooks automatisch erstellen ✅
+3. Website
+4. tools for achievement (pdfreader) ✅
+5. mehr Achievements
+    -> passedFirstExercise
+    elegante Möglichkeit finden um Hooks von Hiwis/Owner zu ignorieren!
+6. Integrationstest // webhookkram muss noch gut getestet werden -> Signe um Erlaubniss fragen
+
+
+--- sonstiges ---
+
+generell Hook ignorieren wenn nicht team mitglieder pushen oder ähnliches
+
+
+& error handling in createTeamsFromProjects etwas ausbessern
+
+
+team 118 abgabe_07R_User_Scheduling feedback pdf wirft fehler :(
+abgabe 03 auch anfällig
+
+branch check eine funktion
+
+webhook token extra post dann mit next in app für /webhook
+

@@ -15,22 +15,13 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        user_name: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        user_email: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: { isEmail: true }
-        },
-        user_username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        number_of_commits: {
-            type: DataTypes.INTEGER,
-            defaultValue: 0
         }
 
     });

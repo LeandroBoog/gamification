@@ -1,6 +1,6 @@
 
-function updateSecondChance(webHookData, team) {
-    //team.used_second_chance = true
+function updateSecondChance({ team }) {
+    team.used_second_chance = true
     console.log('todo: updateSecondChance')
 }
 
