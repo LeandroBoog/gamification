@@ -115,14 +115,14 @@ async function checkForAchievements({ webHookData }) {
         return achievement.name
     })
 
+    const teamData = {
+        webHookData,
+        team
+    }
+            
     for (const achievement of achievements) {
 
         if(completedAchievements.includes(achievement.name)) continue;
-
-        const teamData = {
-            webHookData,
-            team
-        }
 
         if(achievement.check(teamData)) {
             const gottenAchievement = await getAchievementByName(achievement.name)
