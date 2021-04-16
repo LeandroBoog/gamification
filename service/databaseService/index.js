@@ -27,18 +27,6 @@ async function getTeamById(teamId) {
     return team
 }
 
-async function getTeamAchievements(teamId) {
-    const team = await Team.findOne({
-        where: { project_id: teamId },
-        include: [
-            { model: Achievement },
-            ]
-    })
-    if(!team) throw new NotInDatabaseException(`Team of ID ${teamId} not found in Database`)
-
-    return team.achievements
-}
-
 async function getAchievementByName(achievementName) {
     const achievement = await Achievement.findOne({
         where: { name: achievementName }
@@ -94,7 +82,6 @@ async function createAchievement(name) {
 module.exports = {
     getStudentById,
     getTeamById,
-    getTeamAchievements,
     getAchievementByName,
     createTeam,
     createAchievement,

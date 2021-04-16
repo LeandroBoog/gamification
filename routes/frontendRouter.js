@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { getTeamAchievements } = require('../service/databaseService')
+const { getTeamById } = require('../service/databaseService')
 
 
 router.get('/', async (req, res) => {
@@ -11,8 +11,9 @@ router.get('/', async (req, res) => {
     if(!id) return res.status(400).send('Team Id required as URL Parameter "team"!')
 
     try{
-        const teamData = await getTeamAchievements(id)
-        res.send(teamData)
+        const team = await getTeamById(id)
+        const teamAchievements = await team.getAchievements()
+        res.send(teamAchievements)
     } catch (error) {
         console.error(error)
         res.status(404).send(error)
