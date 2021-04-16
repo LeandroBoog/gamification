@@ -12,6 +12,7 @@ module.exports = {
     DB_PATH: '/home/leandro/temp/gameification.sqlite',
 
     WEBHOOK_URL: encodeURI('http://tl.ddns.timoschwarzer.com:3000/gitlab-webhook'),
+    WEBHOOK_TOKEN: 'somesecrettoken',
 
     RANKS: {
         'No access': 0,

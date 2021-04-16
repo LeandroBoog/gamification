@@ -1,5 +1,5 @@
 
-const { updateTeamStats, checkForAchievements } = require('../service')
+const { updateTeamStats, checkForAchievements } = require('../service/achievementService')
 
 async function handleWebHook({ webHookData }) {
 

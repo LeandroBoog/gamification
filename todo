@@ -11,8 +11,6 @@
 
 --- sonstiges ---
 
-generell Hook ignorieren wenn nicht team mitglieder pushen oder ähnliches
-
 
 & error handling in createTeamsFromProjects etwas ausbessern
 
@@ -20,7 +18,7 @@ generell Hook ignorieren wenn nicht team mitglieder pushen oder ähnliches
 team 118 abgabe_07R_User_Scheduling feedback pdf wirft fehler :(
 abgabe 03 auch anfällig
 
-branch check eine funktion
+branch check eine funktion ✅ -> brauch man nicht
 
-webhook token extra post dann mit next in app für /webhook
+webhook token  ✅
 

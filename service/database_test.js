@@ -1,7 +1,7 @@
 
 const db = require('../database')
 
-const { createTeam, createAchievement, getTeamById } = require('./index')
+const { createTeam, createAchievement, getTeamById } = require('./databaseService')
 const example_data = require('./example_data')
 
 
@@ -12,7 +12,7 @@ function log(t) {
 async function populateDatabase() {
 
     // populating Achievements
-    let achievements = require('./achievements')
+    let achievements = require('./achievementService/achievements')
     let achi = []
     for(const achievement of achievements) {
         achi.push(await createAchievement(achievement.name))
