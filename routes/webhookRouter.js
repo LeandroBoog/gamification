@@ -4,13 +4,10 @@ const config = require('../config')
 const express = require('express')
 const router = express.Router()
 
-router.use((req, res, next) => {
+const { verifyToken } = require('../lib/auth')
 
-    const token = req.header('X-Gitlab-Token')
-    if(token !== config.WEBHOOK_TOKEN) return res.status(401).send('Invalid Token')
 
-    next()
-})
+router.use(verifyToken)
 
 router.post('/', async (req, res) => {
     const data = req.body

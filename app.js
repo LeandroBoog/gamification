@@ -5,17 +5,11 @@ const express = require('express')
 const app = express()
 
 const cors = require('cors')
-
-const webhookRouter = require('./routes/webhookRouter')
-const frontendRouter = require('./routes/frontendRouter')
-
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-const webhookPath = new URL(config.WEBHOOK_URL).pathname
-app.use(webhookPath, webhookRouter)
-app.use('/', frontendRouter)
+app.use('/api', require('./routes'))
 
 
 const server = app.listen(config.PORT, () => {

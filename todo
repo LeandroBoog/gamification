@@ -2,7 +2,7 @@
 1. Controller + Routen
 2. Hooks automatisch erstellen ✅
 3. Website
-4. tools for achievement (pdfreader) ✅
+4. tools for achievement (pdfreader) ~
 5. mehr Achievements
     -> passedFirstExercise
     elegante Möglichkeit finden um Hooks von Hiwis/Owner zu ignorieren!
@@ -22,3 +22,6 @@ branch check eine funktion ✅ -> brauch man nicht
 
 webhook token  ✅
 
+-----------------------------------------------------------------
+getPointsFromFeedback zu generellen Teamdaten hinzufügen mit checks halt damit das nicht mehrmals
+gemacht werden muss!!!

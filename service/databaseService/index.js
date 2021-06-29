@@ -27,6 +27,13 @@ async function getTeamById(teamId) {
     return team
 }
 
+async function getAllTeams() {
+    const teams = await Team.findAll({ include: Achievement })
+    if(!teams) throw new NotInDatabaseException(`The Team Database appears to be empty!`)
+
+    return teams
+}
+
 async function getAchievementByName(achievementName) {
     const achievement = await Achievement.findOne({
         where: { name: achievementName }
@@ -82,6 +89,7 @@ async function createAchievement(name) {
 module.exports = {
     getStudentById,
     getTeamById,
+    getAllTeams,
     getAchievementByName,
     createTeam,
     createAchievement,
