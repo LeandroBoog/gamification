@@ -4,6 +4,7 @@ const db = require('../../database')
 const Student = db.models.student
 const Achievement = db.models.achievement
 const Team = db.models.team
+const TeamStats = db.models.teamstats
 
 const NotInDatabaseException = require('../../Exceptions/NotInDatabaseException')
 const DatabaseEntryCreationException = require('../../Exceptions/DatabaseEntryCreationException')
@@ -28,7 +29,7 @@ async function getTeamById(teamId) {
 }
 
 async function getAllTeams() {
-    const teams = await Team.findAll({ include: Achievement })
+    const teams = await Team.findAll({ include: TeamStats})
     if(!teams) throw new NotInDatabaseException(`The Team Database appears to be empty!`)
 
     return teams
@@ -64,6 +65,9 @@ async function createTeam({ id, name, group, year }, students) {
             gitlab_group: group,
             year: year
         }, { transaction: t })
+
+        const stats = await TeamStats.create({}, { transaction: t })
+        team.setTeamstat(stats)
 
         for(const studentObj of students) {
             const student = await createStudent(studentObj, t)

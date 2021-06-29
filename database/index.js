@@ -12,7 +12,8 @@ const sequelize = new Sequelize({
 const models = [
     require('./models/Student.model'),
     require('./models/Achievement.model'),
-    require('./models/Team.model')
+    require('./models/Team.model'),
+    require('./models/Teamstats.model')
 ];
 
 for (const setupModel of models) {

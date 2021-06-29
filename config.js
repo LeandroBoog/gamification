@@ -5,8 +5,8 @@ module.exports = {
 
     GITLAB_INSTANCE: "gitlab.ibr.cs.tu-bs.de",
     GITLAB_TOKEN: "CHZbVx9rTT8nChYtEfrm",
-    //GITLAB_GROUP_NAME: "bs-test-groups",
-    GITLAB_GROUP_NAME: "ws2021-bs-studs",
+    GITLAB_GROUP_NAME: "bs-test-groups",
+    //GITLAB_GROUP_NAME: "ws2021-bs-studs",
     STUDENT_GITLAB_RANK: 'Developer',
 
     DB_PATH: '/home/leandro/temp/gameification.sqlite',
