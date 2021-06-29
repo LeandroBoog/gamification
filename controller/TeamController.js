@@ -2,6 +2,7 @@
 const RequestHandler = require('../lib/RequestHandler')
 const databaseService = require('../service/databaseService')
 
+
 class TeamController {
 
     static getAllTeams(req, res) {
@@ -34,7 +35,5 @@ class TeamController {
     }
 
 }
-
-
 
 module.exports = TeamController
