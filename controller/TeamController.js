@@ -4,37 +4,35 @@ const databaseService = require('../service/databaseService')
 
 class TeamController {
 
-    static async getAllTeams(req, res) {
-        try {
-            const teams = await databaseService.getAllTeams()
-            RequestHandler.sendSuccess(res, `Returning all Teams`, teams)
-        } catch(error) {
-            console.error(error)
-            RequestHandler.sendError(req, res, error)
-        }
+    static getAllTeams(req, res) {
+        const query = () => databaseService.getAllTeams()
+        RequestHandler.handleQuery(query, req, res)
     }
 
-    static async getTeam(req, res) {
+    static getTeam(req, res) {
         const teamId = req.params.projectId
-
-        try {
-            const team = await databaseService.getTeamById(teamId, "achievement")
-            RequestHandler.sendSuccess(res, `Data for ${team.project_name}`, team)
-        } catch(error) {
-            RequestHandler.sendError(req, res, error)
-        }
+        const query = () => databaseService.getTeamById(teamId)
+        RequestHandler.handleQuery(query, req, res)
     }
 
-    static async getTeamStats(req, res) {
+    static getAllTeamInformation(req, res) {
         const teamId = req.params.projectId
-
-        try {
-            const team = await databaseService.getTeamById(teamId, "teamstats")
-            RequestHandler.sendSuccess(res, `Data for ${team.project_name}`, team)
-        } catch(error) {
-            RequestHandler.sendError(req, res, error)
-        }
+        const query = () => databaseService.getTeamById(teamId,'achievement', 'teamstats')
+        RequestHandler.handleQuery(query, req, res)
     }
+
+    static getTeamAchievements(req, res) {
+        const teamId = req.params.projectId
+        const query = () => databaseService.getTeamById(teamId, 'achievement')
+        RequestHandler.handleQuery(query, req, res)
+    }
+
+    static getTeamStats(req, res) {
+        const teamId = req.params.projectId
+        const query = () => databaseService.getTeamById(teamId, 'teamstats')
+        RequestHandler.handleQuery(query, req, res)
+    }
+
 }
 
 

@@ -91,8 +91,9 @@ async function createAchievement(name) {
 }
 
 function getIncludedModels(includes) {
-    return includes.map(include => db.models[include.toLowerCase()])
+    return includes.map(model => db.models[model.toLowerCase()])
 }
+
 
 module.exports = {
     getStudentById,
