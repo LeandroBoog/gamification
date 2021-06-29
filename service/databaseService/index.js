@@ -19,9 +19,10 @@ async function getStudentById(studentId) {
     return student
 }
 
-async function getTeamById(teamId) {
+async function getTeamById(projectId, ...includes) {
     const team = await Team.findOne({
-        where: { project_id: teamId },
+        where: { project_id: projectId },
+        include: getIncludedModels(includes)
     })
     if(!team) throw new NotInDatabaseException(`Team of ID ${teamId} not found in Database`)
 
@@ -29,7 +30,7 @@ async function getTeamById(teamId) {
 }
 
 async function getAllTeams() {
-    const teams = await Team.findAll({ include: TeamStats})
+    const teams = await Team.findAll()
     if(!teams) throw new NotInDatabaseException(`The Team Database appears to be empty!`)
 
     return teams
@@ -89,6 +90,9 @@ async function createAchievement(name) {
     return await Achievement.create({ name })
 }
 
+function getIncludedModels(includes) {
+    return includes.map(include => db.models[include.toLowerCase()])
+}
 
 module.exports = {
     getStudentById,

@@ -14,18 +14,27 @@ class TeamController {
         }
     }
 
-    static async getTeamById(req, res) {
-
-        const teamId = req.params.teamId
+    static async getTeam(req, res) {
+        const teamId = req.params.projectId
 
         try {
-            const team = await databaseService.getTeamById(teamId)
+            const team = await databaseService.getTeamById(teamId, "achievement")
             RequestHandler.sendSuccess(res, `Data for ${team.project_name}`, team)
         } catch(error) {
             RequestHandler.sendError(req, res, error)
         }
     }
 
+    static async getTeamStats(req, res) {
+        const teamId = req.params.projectId
+
+        try {
+            const team = await databaseService.getTeamById(teamId, "teamstats")
+            RequestHandler.sendSuccess(res, `Data for ${team.project_name}`, team)
+        } catch(error) {
+            RequestHandler.sendError(req, res, error)
+        }
+    }
 }
 
 
