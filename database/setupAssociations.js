@@ -1,7 +1,7 @@
 
 function setupAssociations(sequelize) {
 
-    const { student, achievement, team, teamstats } = sequelize.models
+    const { student, achievement, team, stats } = sequelize.models
 
     team.hasMany(student)
     student.belongsTo(team)
@@ -9,8 +9,8 @@ function setupAssociations(sequelize) {
     team.belongsToMany(achievement, { through: 'team_achievements' })
     achievement.belongsToMany(team, { through: 'team_achievements'})
 
-    teamstats.hasOne(team)
-    team.belongsTo(teamstats)
+    stats.hasOne(team)
+    team.belongsTo(stats)
 }
 
 module.exports = setupAssociations

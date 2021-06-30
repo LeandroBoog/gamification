@@ -18,7 +18,7 @@ class TeamController {
 
     static getAllTeamInformation(req, res) {
         const teamId = req.params.projectId
-        const query = () => databaseService.getTeamById(teamId,'achievement', 'teamstats')
+        const query = () => databaseService.getTeamById(teamId,'achievement', 'stats')
         RequestHandler.handleQuery(query, req, res)
     }
 
@@ -30,7 +30,7 @@ class TeamController {
 
     static getTeamStats(req, res) {
         const teamId = req.params.projectId
-        const query = () => databaseService.getTeamById(teamId, 'teamstats')
+        const query = () => databaseService.getTeamById(teamId, 'stats')
         RequestHandler.handleQuery(query, req, res)
     }
 

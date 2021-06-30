@@ -13,7 +13,7 @@ const models = [
     require('./models/Student.model'),
     require('./models/Achievement.model'),
     require('./models/Team.model'),
-    require('./models/Teamstats.model')
+    require('./models/Stats.model')
 ];
 
 for (const setupModel of models) {

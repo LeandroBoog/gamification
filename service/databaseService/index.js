@@ -4,7 +4,7 @@ const db = require('../../database')
 const Student = db.models.student
 const Achievement = db.models.achievement
 const Team = db.models.team
-const TeamStats = db.models.teamstats
+const Stats = db.models.stats
 
 const NotInDatabaseException = require('../../Exceptions/NotInDatabaseException')
 const DatabaseEntryCreationException = require('../../Exceptions/DatabaseEntryCreationException')
@@ -12,7 +12,7 @@ const DatabaseEntryCreationException = require('../../Exceptions/DatabaseEntryCr
 
 async function getStudentById(studentId) {
     const student = await Student.findOne({
-        where: { user_id: studentId }
+        where: { userId: studentId }
     })
     if(!student) throw new NotInDatabaseException(`Student of ID ${studentId} not found in Database`)
 
@@ -21,7 +21,7 @@ async function getStudentById(studentId) {
 
 async function getTeamById(projectId, ...includes) {
     const team = await Team.findOne({
-        where: { project_id: projectId },
+        where: { projectId: projectId },
         include: getIncludedModels(includes)
     })
     if(!team) throw new NotInDatabaseException(`Team of ID ${teamId} not found in Database`)
@@ -47,7 +47,7 @@ async function getAchievementByName(achievementName) {
 
 async function createStudent({ id, name, username }, t) {
     return await Student.create({
-        user_id: id,
+        userId: id,
         name,
         username
     }, { transaction: t })
@@ -61,14 +61,14 @@ async function createTeam({ id, name, group, year }, students) {
     try {
 
         const team = await Team.create({
-            project_id: id,
-            project_name: name,
-            gitlab_group: group,
+            projectId: id,
+            projectName: name,
+            gitlabGroup: group,
             year: year
         }, { transaction: t })
 
-        const stats = await TeamStats.create({}, { transaction: t })
-        team.setTeamstat(stats)
+        const stats = await Stats.create({}, { transaction: t })
+        team.setStat(stats)
 
         for(const studentObj of students) {
             const student = await createStudent(studentObj, t)

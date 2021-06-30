@@ -8,7 +8,7 @@ const { getTeamById } = require('../databaseService')
 async function updateTeamStats({ webHookData }) {
 
     const teamId = webHookData.project_id
-    const team = await getTeamById(teamId)
+    const team = await getTeamById(teamId, 'teamstats')
 
     const teamData = {
         webHookData,

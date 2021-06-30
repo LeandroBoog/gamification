@@ -4,9 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "resetdb": "node lib/init.js"
   },
-  "author": "",
+  "author": "Leandro Boog",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",

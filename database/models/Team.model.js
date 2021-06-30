@@ -11,16 +11,16 @@ module.exports = (sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        project_id: {
+        projectId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             unique: true
         },
-        project_name: {
+        projectName: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        gitlab_group: {
+        gitlabGroup: {
             type: DataTypes.STRING,
             allowNull: false
         },

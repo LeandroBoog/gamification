@@ -3,17 +3,17 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
 
-    sequelize.define('teamstats', {
+    sequelize.define('stats', {
 
-        number_of_commits: {
+        numberOfCommits: {
             type: DataTypes.INTEGER,
             defaultValue: 0
         },
-        average_commit_time: {
+        averageCommitTime: {
             type: DataTypes.STRING,
             defaultValue: "00:00"
         },
-        used_second_chance: {
+        usedSecondChance: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },

@@ -21,6 +21,3 @@ process.on('SIGTERM', () => {
         console.log('Received SIGTERM, Server terminated')
     })
 })
-
-// This initializes the database by getting all the projects of the given gitlab group
-require('./lib/init')()
