@@ -9,8 +9,8 @@ EXERCISE.minPoints     = Math.ceil(EXERCISE.maxPoints * 0.5)
 EXERCISE.minPointsRedo = Math.ceil(EXERCISE.maxPoints * 0.75)
 
 
-function passedFirstExercise({ webHookData }) {
-    return checkIfExerciseHasBeenPassed(webHookData, EXERCISE)
+async function passedFirstExercise({ webHookData }) {
+    return await checkIfExerciseHasBeenPassed(webHookData, EXERCISE)
 }
 
 module.exports = { name: 'Passed First Exercise', check: passedFirstExercise }

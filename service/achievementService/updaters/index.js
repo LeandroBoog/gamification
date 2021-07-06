@@ -1,14 +1,21 @@
 
+// first & second contain all updaters pre achievement check
 const first = [
     require('./updateCommitCount'),
     require('./updateSecondChance')
 ]
 
-const last = [
+const second = [
     require('./updateAverageCommitTime'),
 ]
 
-module.exports = [
-    ...first,
-    ...last
+// last contains all updaters post achievement check
+const last = [
+
 ]
+
+module.exports = {
+    first,
+    second,
+    last
+}

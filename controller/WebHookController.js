@@ -1,15 +1,15 @@
 
 const RequestHandler = require('../lib/RequestHandler')
-const { updateTeamStats, checkForAchievements } = require('../service/achievementService')
+const { updateTeam } = require('../service/achievementService')
 const { deleteWebhookFromTeam } = require('../lib/gitlabApiManager')
+
 
 class WebHookController {
 
     static async handleWebHook(req, res) {
         const webHookData = req.body
         try {
-            await updateTeamStats({ webHookData })
-            await checkForAchievements({ webHookData })
+            await updateTeam(webHookData)
         } catch (error) {
             console.error(error)
         } finally {
