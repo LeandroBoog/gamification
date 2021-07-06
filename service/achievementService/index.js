@@ -7,17 +7,10 @@ const { getTeamById, getAchievementByName } = require('../databaseService')
 
 async function updateTeamStats(teamData, statsToUpdate) {
     for(const updater of statsToUpdate) await updater(teamData)
-}
-
-async function updateTeamStatsPreAchievementCheck(teamData) {
-
-    const statsToUpdate = [...updaters.first, ...updaters.second]
-    await updateTeamStats(teamData, statsToUpdate)
-
     return await teamData.team.stat.save() && await teamData.team.save()
 }
 
-async function checkForAchievements(teamData) {
+async function checkAchievements(teamData, achievementsToCheck) {
 
     const { team } = teamData
 
@@ -25,7 +18,7 @@ async function checkForAchievements(teamData) {
         return achievement.name
     })
 
-    for (const achievement of achievements) {
+    for (const achievement of achievementsToCheck) {
 
         if(completedAchievements.includes(achievement.name)) continue;
 
@@ -38,11 +31,24 @@ async function checkForAchievements(teamData) {
     return await team.getAchievements()
 }
 
+async function updateTeamStatsPreAchievementCheck(teamData) {
+    const statsToUpdate = [...updaters.first, ...updaters.second]
+    return await updateTeamStats(teamData, statsToUpdate)
+}
+
+async function checkAchievementsAfterFirstUpdate(teamData) {
+    const achievementsToCheck = achievements.first
+    return await checkAchievements(teamData, achievementsToCheck)
+}
+
 async function updateTeamStatsPostAchievementCheck(teamData) {
     const statsToUpdate = updaters.last
-    await updateTeamStats(teamData, statsToUpdate)
+    return await updateTeamStats(teamData, statsToUpdate)
+}
 
-    return await teamData.team.stat.save() && await teamData.team.save()
+async function checkAchievementsPostAllUpdates(teamData) {
+    const achievementsToCheck = achievements.last
+    return await checkAchievements(teamData, achievementsToCheck)
 }
 
 async function updateTeam(webHookData) {
@@ -56,8 +62,9 @@ async function updateTeam(webHookData) {
     }
 
     await updateTeamStatsPreAchievementCheck(teamData)
-    await checkForAchievements(teamData)
+    await checkAchievementsAfterFirstUpdate(teamData)
     await updateTeamStatsPostAchievementCheck(teamData)
+    await checkAchievementsPostAllUpdates(teamData)
 }
 
 module.exports = {
