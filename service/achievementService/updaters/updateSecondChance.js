@@ -1,11 +1,11 @@
 
 function updateSecondChance({ team }) {
-    team.used_second_chance = true
+    team.stat.usedSecondChance = somehowFindOutIfTheyPassedOrFailed()
     console.log('todo: updateSecondChance')
 }
 
 function somehowFindOutIfTheyPassedOrFailed() {
-
+    return false;
 }
 
 module.exports = updateSecondChance

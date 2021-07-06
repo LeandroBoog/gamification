@@ -1,6 +1,6 @@
 
 function nightOwl({ team }) {
-    const teamAverage = team.average_commit_time
+    const teamAverage = team.stat.averageCommitTime
     const hours = parseInt(teamAverage.split(':')[0])
 
     return hours >= 22

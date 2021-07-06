@@ -1,6 +1,14 @@
 
-module.exports = [
+const first = [
     require('./updateCommitCount'),
-    require('./updateAverageCommitTime'),
     require('./updateSecondChance')
+]
+
+const last = [
+    require('./updateAverageCommitTime'),
+]
+
+module.exports = [
+    ...first,
+    ...last
 ]

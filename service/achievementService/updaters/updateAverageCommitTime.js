@@ -1,15 +1,13 @@
 
 async function updateAverageCommitTime({ webHookData, team }) {
 
-    const stats = await team.getTeamstat()
-    console.log(a)
     const timestampOfCommit = webHookData.commits[0].timestamp
 
     const newTime = new Date(timestampOfCommit)
-    const oldTime = stats.average_commit_time.split(':')
+    const oldTime = team.stat.averageCommitTime.split(':')
 
-    const n = stats.number_of_commits
-    stats.average_commit_time = calcAverageCommitTime(n, newTime, oldTime)
+    const n = team.stat.numberOfCommits
+    team.stat.averageCommitTime = calcAverageCommitTime(n, newTime, oldTime)
 }
 
 function calcAverageCommitTime(n, newTime, oldTime) {
@@ -37,6 +35,9 @@ function calcAverageCommitTime(n, newTime, oldTime) {
 }
 
 module.exports = updateAverageCommitTime
+
+
+
 
 
 
