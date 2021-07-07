@@ -1,6 +1,6 @@
 
 function typewriter({ team }) {
-    return team.stat.numberOfCommits >= 20
+    return team.stat.numberOfCommits >= 50
 }
 
 module.exports = {
