@@ -1,7 +1,7 @@
 
 const first = [
-    require('./nightOwl'),
-    require('./typewriter'),
+    //require('./nightOwl'),
+    //require('./typewriter'),
     require('./passedFirstExercise')
 ]
 

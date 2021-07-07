@@ -6,7 +6,8 @@ const setupAssociations = require('./setupAssociations')
 const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: config.DB_PATH,
-    define: { freezeTableName: true }
+    define: { freezeTableName: true },
+    logging: false
 });
 
 const models = [
