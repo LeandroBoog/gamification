@@ -17,5 +17,9 @@ module.exports = (sequelize) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
+        achievementCount: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0
+        }
     });
 }

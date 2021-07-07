@@ -6,7 +6,7 @@ const first = [
 ]
 
 const last = [
-
+    ...require('./getXAchievements')
 ]
 
 module.exports = {

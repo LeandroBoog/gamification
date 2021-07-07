@@ -11,7 +11,7 @@ const second = [
 
 // last contains all updaters post achievement check
 const last = [
-
+    require('./updateAchievementCount')
 ]
 
 module.exports = {
