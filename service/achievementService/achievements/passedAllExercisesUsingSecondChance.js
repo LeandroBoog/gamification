@@ -1,0 +1,14 @@
+
+const allExercises = require('./passingExercises')
+
+
+async function passedAllExercisesFirstTry({ team }) {
+    if(team.stat.usedSecondChance) return false
+    const gottenAchievements = (await team.getAchievements()).map(achievement => achievement.name)
+    return allExercises.every(achievement => gottenAchievements.includes(achievement.name))
+}
+
+module.exports = {
+    name: "Comeback",
+    check: passedAllExercisesFirstTry
+}

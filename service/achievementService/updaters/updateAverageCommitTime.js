@@ -1,7 +1,9 @@
 
 async function updateAverageCommitTime({ webHookData, team }) {
 
-    const timestampOfCommit = webHookData.commits[0].timestamp
+    const firstCommit = webHookData.commits[0]
+    if(!firstCommit) return
+    const timestampOfCommit = firstCommit.timestamp
 
     const newTime = new Date(timestampOfCommit)
     const oldTime = team.stat.averageCommitTime.split(':')

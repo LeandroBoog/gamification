@@ -6,4 +6,7 @@ function nightOwl({ team }) {
     return hours >= 22
 }
 
-module.exports = { name: 'Night Owl', check: nightOwl }
+module.exports = {
+    name: 'Night Owl',
+    check: nightOwl
+}
