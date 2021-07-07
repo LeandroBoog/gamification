@@ -1,12 +1,11 @@
 
-function updateSecondChance({ team }) {
-    team.stat.usedSecondChance = somehowFindOutIfTheyPassedOrFailed()
-    console.log('todo: updateSecondChance')
+function updateSecondChance({ webHookData, team }) {
+    team.stat.usedSecondChance = checkIfSecondChanceIsInUse(webHookData)
 }
 
-function somehowFindOutIfTheyPassedOrFailed() {
-    // check if branch has 'nachkorrektur' -> means they have used their second chance
-    return false;
+// a bit hacky, we are just checking if we ever get a commit on a branch that has the 'nachkorrektur' ending
+function checkIfSecondChanceIsInUse(webHookData) {
+    return webHookData.ref.contains('nachkorrektur')
 }
 
 module.exports = updateSecondChance
