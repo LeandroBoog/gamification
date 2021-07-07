@@ -38,7 +38,7 @@ async function updateTeamStatsPreAchievementCheck(teamData) {
 }
 
 async function checkAchievementsAfterFirstUpdate(teamData) {
-    const achievementsToCheck = achievements.first
+    const achievementsToCheck = [...achievements.first, ...achievements.second]
     return await checkAchievements(teamData, achievementsToCheck)
 }
 
