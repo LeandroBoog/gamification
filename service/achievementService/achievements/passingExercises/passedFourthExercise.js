@@ -13,4 +13,4 @@ async function passedFourthExercise({ webHookData }) {
     return await checkIfExerciseHasBeenPassed(webHookData, EXERCISE)
 }
 
-module.exports = { name: 'Passed First Exercise', check: passedFourthExercise }
+module.exports = { name: 'Passed Fourth Exercise', check: passedFourthExercise }
