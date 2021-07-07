@@ -81,7 +81,7 @@ async function createTeam({ id, name, group, year }, students) {
 
     } catch (error) {
         await t.rollback()
-        //console.error(error)
+        console.error(error)
         throw new DatabaseEntryCreationException(`Failed to create Team of ID ${id}`)
     }
 }

@@ -20,13 +20,11 @@ async function checkAchievements(teamData, achievementsToCheck) {
 
     for (const achievement of achievementsToCheck) {
 
-        //if(completedAchievements.includes(achievement.name)) continue;
+        if(completedAchievements.includes(achievement.name)) continue;
 
         const achievementPassed = await achievement.check(teamData)
-        console.log('is passed: ' + achievementPassed)
         if(achievementPassed) {
             const gottenAchievement = await getAchievementByName(achievement.name)
-            console.log(gottenAchievement)
             await team.addAchievement(gottenAchievement)
         }
     }
@@ -64,10 +62,10 @@ async function updateTeam(webHookData) {
         team
     }
 
-    //await updateTeamStatsPreAchievementCheck(teamData)
+    await updateTeamStatsPreAchievementCheck(teamData)
     await checkAchievementsAfterFirstUpdate(teamData)
-    //await updateTeamStatsPostAchievementCheck(teamData)
-    //await checkAchievementsPostAllUpdates(teamData)
+    await updateTeamStatsPostAchievementCheck(teamData)
+    await checkAchievementsPostAllUpdates(teamData)
 }
 
 module.exports = {
