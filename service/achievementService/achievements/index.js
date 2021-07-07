@@ -2,7 +2,7 @@
 const first = [
     require('./nightOwl'),
     require('./typewriter'),
-    require('./passedFirstExercise')
+    ...require('./passingExercises')
 ]
 
 const last = [

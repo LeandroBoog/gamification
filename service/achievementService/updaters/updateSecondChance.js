@@ -5,6 +5,7 @@ function updateSecondChance({ team }) {
 }
 
 function somehowFindOutIfTheyPassedOrFailed() {
+    // check if branch has 'nachkorrektur' -> means they have used their second chance
     return false;
 }
 

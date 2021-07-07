@@ -1,5 +1,5 @@
 
-const checkIfExerciseHasBeenPassed = require('../../../lib/checkIfExerciseHasBeenPassed')
+const checkIfExerciseHasBeenPassed = require('../../../../lib/checkIfExerciseHasBeenPassed')
 
 const EXERCISE = {}
 EXERCISE.branch        = 'abgabe_01R_basics'
