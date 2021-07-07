@@ -1,10 +1,10 @@
 
 function updateSecondChance({ webHookData, team }) {
-    team.stat.usedSecondChance = checkIfSecondChanceIsInUse(webHookData)
+    team.stat.usedSecondChance = checkIfSecondChanceHasBeenUse(webHookData)
 }
 
 // a bit hacky, we are just checking if we ever get a commit on a branch that has the 'nachkorrektur' ending
-function checkIfSecondChanceIsInUse(webHookData) {
+function checkIfSecondChanceHasBeenUse(webHookData) {
     return webHookData.ref.contains('nachkorrektur')
 }
 
