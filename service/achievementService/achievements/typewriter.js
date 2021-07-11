@@ -3,7 +3,7 @@ function typewriter({ team }) {
     return team.stat.numberOfCommits >= 50
 }
 
-module.exports = {
+export default {
     name: 'Typewriter',
     check: typewriter
 }

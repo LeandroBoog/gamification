@@ -1,10 +1,10 @@
 
-module.exports = [
-    require('./passedFirstExercise'),
-    require('./passedSecondExercise'),
-    require('./passedThirdExercise'),
-    require('./passedFourthExercise'),
-    require('./passedFifthExercise'),
-    require('./passedSixthExercise'),
-    require('./passedSeventhExercise'),
+export default await [
+    import('./passedFirstExercise'),
+    import('./passedSecondExercise'),
+    import('./passedThirdExercise'),
+    import('./passedFourthExercise'),
+    import('./passedFifthExercise'),
+    import('./passedSixthExercise'),
+    import('./passedSeventhExercise'),
 ]

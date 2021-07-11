@@ -1,14 +1,14 @@
 
-const db = require('../../database')
+import db from '../../database'
+
+import NotInDatabaseException from "../../Exceptions/NotInDatabaseException";
+import DatabaseEntryCreationException from "../../Exceptions/DatabaseEntryCreationException";
+
 
 const Student = db.models.student
 const Achievement = db.models.achievement
 const Team = db.models.team
 const Stats = db.models.stats
-
-const NotInDatabaseException = require('../../Exceptions/NotInDatabaseException')
-const DatabaseEntryCreationException = require('../../Exceptions/DatabaseEntryCreationException')
-
 
 async function getStudentById(studentId) {
     const student = await Student.findOne({
@@ -95,7 +95,7 @@ function getIncludedModels(includes) {
 }
 
 
-module.exports = {
+export {
     getStudentById,
     getTeamById,
     getAllTeams,

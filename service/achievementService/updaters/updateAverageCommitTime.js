@@ -36,7 +36,7 @@ function calcAverageCommitTime(n, newTime, oldTime) {
     return `${avgHours}:${avgMinutes}`
 }
 
-module.exports = updateAverageCommitTime
+export default updateAverageCommitTime
 
 
 

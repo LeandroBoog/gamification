@@ -1,7 +1,7 @@
 
-const RequestHandler = require('../lib/RequestHandler')
-const { updateTeam } = require('../service/achievementService')
-const { deleteWebhookFromTeam } = require('../lib/gitlabApiManager')
+import RequestHandler from "../lib/RequestHandler";
+import { updateTeam } from "../service/achievementService"
+import { deleteWebhookFromTeam } from "../lib/gitlabApiManager";
 
 
 class WebHookController {
@@ -24,4 +24,4 @@ class WebHookController {
     }
 }
 
-module.exports = WebHookController
+export default WebHookController

@@ -1,5 +1,5 @@
 
-module.exports = class GitlabApiException extends Error {
+class GitlabApiException extends Error {
 
     constructor(error) {
         super(error.message);
@@ -26,3 +26,5 @@ module.exports = class GitlabApiException extends Error {
         return errorObj
     }
 }
+
+export default GitlabApiException

@@ -1,5 +1,6 @@
 
-const checkIfExerciseHasBeenPassed = require('../../../../lib/checkIfExerciseHasBeenPassed')
+import checkIfExerciseHasBeenPassed from "../../../../lib/checkIfExerciseHasBeenPassed";
+
 
 const EXERCISE = {}
 EXERCISE.branch        = 'abgabe_07R_User_Scheduling'
@@ -13,7 +14,7 @@ async function passedFifthExercise({ webHookData }) {
     return await checkIfExerciseHasBeenPassed(webHookData, EXERCISE)
 }
 
-module.exports = {
+export default {
     name: 'Passed Exercise: 07R User Scheduling',
     check: passedFifthExercise
 }

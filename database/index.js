@@ -1,7 +1,13 @@
 
-const config = require('../config')
-const { Sequelize } = require('sequelize');
-const setupAssociations = require('./setupAssociations')
+import config from "../config"
+import { Sequelize } from 'sequelize'
+import setupAssociations from "./setupAssociations";
+
+import Achievement from './models/Achievement.model'
+import Stats from './models/Stats.model'
+import Student from './models/Student.model'
+import Team from './models/Team.model'
+
 
 const sequelize = new Sequelize({
     dialect: "sqlite",
@@ -11,10 +17,10 @@ const sequelize = new Sequelize({
 });
 
 const models = [
-    require('./models/Student.model'),
-    require('./models/Achievement.model'),
-    require('./models/Team.model'),
-    require('./models/Stats.model')
+    Achievement,
+    Stats,
+    Student,
+    Team
 ];
 
 for (const setupModel of models) {
@@ -23,4 +29,4 @@ for (const setupModel of models) {
 
 setupAssociations(sequelize)
 
-module.exports = sequelize
+export default sequelize

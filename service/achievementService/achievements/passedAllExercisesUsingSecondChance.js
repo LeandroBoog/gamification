@@ -1,5 +1,5 @@
 
-const allExercises = require('./passingExercises')
+import allExercises from './passingExercises'
 
 
 async function passedAllExercisesFirstTry({ team }) {
@@ -8,7 +8,7 @@ async function passedAllExercisesFirstTry({ team }) {
     return allExercises.every(achievement => gottenAchievements.includes(achievement.name))
 }
 
-module.exports = {
+export default {
     name: "Comeback",
     check: passedAllExercisesFirstTry
 }

@@ -3,7 +3,7 @@ function getFiveAchievements({ team }) {
     return team.stat.achievementCount >= 5
 }
 
-module.exports = {
+export default {
     name: 'Get Five Achievements',
     check: getFiveAchievements
 }

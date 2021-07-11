@@ -13,4 +13,4 @@ function setupAssociations(sequelize) {
     team.belongsTo(stats)
 }
 
-module.exports = setupAssociations
+export default setupAssociations

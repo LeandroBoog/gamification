@@ -1,5 +1,5 @@
 
-module.exports = [
-    require('./getFiveAchievements'),
-    require('./getTenAchievements')
+export default await [
+    import('./getFiveAchievements'),
+    import('./getTenAchievements')
 ]

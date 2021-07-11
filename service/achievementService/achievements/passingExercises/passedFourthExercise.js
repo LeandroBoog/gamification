@@ -1,5 +1,6 @@
 
-const checkIfExerciseHasBeenPassed = require('../../../../lib/checkIfExerciseHasBeenPassed')
+import checkIfExerciseHasBeenPassed from "../../../../lib/checkIfExerciseHasBeenPassed";
+
 
 const EXERCISE = {}
 EXERCISE.branch        = 'abgabe_05R_Speicherverwaltung'
@@ -13,7 +14,7 @@ async function passedFourthExercise({ webHookData }) {
     return await checkIfExerciseHasBeenPassed(webHookData, EXERCISE)
 }
 
-module.exports = {
+export default {
     name: 'Passed Exercise: 05R Memory Management',
     check: passedFourthExercise
 }

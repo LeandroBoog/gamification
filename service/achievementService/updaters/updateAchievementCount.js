@@ -8,4 +8,4 @@ async function getAchievementCount(team) {
     return gottenAchievements.length
 }
 
-module.exports = updateAchievementCount
+export default updateAchievementCount

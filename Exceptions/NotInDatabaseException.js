@@ -1,5 +1,5 @@
 
-module.exports = class NotInDatabaseException extends Error {
+class NotInDatabaseException extends Error {
 
     constructor(message) {
         super(message);
@@ -7,3 +7,5 @@ module.exports = class NotInDatabaseException extends Error {
         this.status = 404
     }
 }
+
+export default NotInDatabaseException

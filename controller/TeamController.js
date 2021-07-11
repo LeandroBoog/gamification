@@ -1,6 +1,6 @@
 
-const RequestHandler = require('../lib/RequestHandler')
-const databaseService = require('../service/databaseService')
+import RequestHandler from "../lib/RequestHandler";
+import databaseService from "../service/databaseService"
 
 
 class TeamController {
@@ -36,4 +36,4 @@ class TeamController {
 
 }
 
-module.exports = TeamController
+export default TeamController

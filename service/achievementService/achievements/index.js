@@ -1,20 +1,20 @@
 
 const first = [
-    require('./nightOwl'),
-    require('./typewriter'),
-    ...require('./passingExercises'),
+    await import('./nightOwl'),
+    await import('./typewriter'),
+    ...await import('./passingExercises'),
 ]
 
 const second = [
-    require('./passedAllExercisesFirstTry'),
-    require('./passedAllExercisesUsingSecondChance')
+    await import('./passedAllExercisesFirstTry'),
+    await import('./passedAllExercisesUsingSecondChance')
 ]
 
 const last = [
-    ...require('./getXAchievements')
+    ...await import('./getXAchievements')
 ]
 
-module.exports = {
+export {
     first,
     second,
     last

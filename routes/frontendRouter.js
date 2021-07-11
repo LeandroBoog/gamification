@@ -1,7 +1,9 @@
 
-const router = require('express').Router()
-const { getTeamById } = require('../service/databaseService')
+import express from "express";
+import { getTeamById } from '../service/databaseService'
 
+
+const router = express.Router()
 
 router.get('/', async (req, res) => {
 
@@ -19,5 +21,5 @@ router.get('/', async (req, res) => {
 
 })
 
-module.exports = router
+export default router
 

@@ -1,5 +1,8 @@
 
-module.exports = {
+import cryptoRandomString from 'crypto-random-string'
+
+
+export default {
 
     PORT: 3000,
 
@@ -13,7 +16,7 @@ module.exports = {
     DB_PATH: '/home/leandro/temp/gameification.sqlite',
 
     WEBHOOK_URL: encodeURI('http://tl.ddns.timoschwarzer.com:3000/api/hook'),
-    WEBHOOK_TOKEN: 'somesecrettoken',
+    WEBHOOK_TOKEN: 'somesecrettoken' || cryptoRandomString({ length: 20 }),
 
     RANKS: {
         'No access': 0,

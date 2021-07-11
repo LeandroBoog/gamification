@@ -9,4 +9,4 @@ function checkIfSecondChanceHasBeenUse(webHookData) {
     return webHookData.ref.includes('nachkorrektur')
 }
 
-module.exports = updateSecondChance
+export default updateSecondChance

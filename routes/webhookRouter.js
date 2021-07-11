@@ -1,12 +1,13 @@
 
-const router =  require('express').Router()
-const WebHookController = require('../controller/WebHookController')
+import express from "express";
+import WebHookController from '../controller/WebHookController'
+import { verifyToken } from '../lib/auth'
 
-const { verifyToken } = require('../lib/auth')
 
+const router = express.Router()
 
 router.use(verifyToken)
 router.post(`/`, WebHookController.handleWebHook)
 router.delete('/:projectId', WebHookController.deleteWebHook)
 
-module.exports = router
+export default router
