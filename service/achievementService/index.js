@@ -1,8 +1,8 @@
 
-const updaters = require('../achievementService/updaters')
-const achievements = require('../achievementService/achievements')
+import updaters from "./updaters"
+import achievements from "./achievements"
 
-const { getTeamById, getAchievementByName } = require('../databaseService')
+import { getTeamById, getAchievementByName } from "../databaseService"
 
 
 async function updateTeamStats(teamData, statsToUpdate) {
@@ -68,6 +68,4 @@ async function updateTeam(webHookData) {
     await checkAchievementsPostAllUpdates(teamData)
 }
 
-module.exports = {
-    updateTeam
-}
+export { updateTeam }

@@ -1,17 +1,26 @@
 
-// first & second contain all updaters pre achievement check
+// --- first imports ---
+import updateCommitCount from "./updateCommitCount";
+import updateSecondChance from "./updateSecondChance";
+
+// --- second imports ---
+import updateAverageCommitTime from "./updateAverageCommitTime";
+
+// --- last imports ---
+import updateAchievementCount from "./updateAchievementCount";
+
+
 const first = [
-    await import('./updateCommitCount'),
-    await import('./updateSecondChance')
+    updateCommitCount,
+    updateSecondChance
 ]
 
 const second = [
-    await import('./updateAverageCommitTime'),
+    updateAverageCommitTime
 ]
 
-// last contains all updaters post achievement check
 const last = [
-    await import('./updateAchievementCount')
+    updateAchievementCount
 ]
 
 export default {

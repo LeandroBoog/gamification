@@ -1,6 +1,6 @@
 
 import RequestHandler from "../lib/RequestHandler";
-import { updateTeam } from "../service/achievementService"
+import { updateTeam } from "../service/achievementService";
 import { deleteWebhookFromTeam } from "../lib/gitlabApiManager";
 
 

@@ -10,7 +10,7 @@ const Achievement = db.models.achievement
 const Team = db.models.team
 const Stats = db.models.stats
 
-async function getStudentById(studentId) {
+export async function getStudentById(studentId) {
     const student = await Student.findOne({
         where: { userId: studentId }
     })
@@ -19,7 +19,7 @@ async function getStudentById(studentId) {
     return student
 }
 
-async function getTeamById(projectId, ...includes) {
+export async function getTeamById(projectId, ...includes) {
     const team = await Team.findOne({
         where: { projectId: projectId },
         include: getIncludedModels(includes)
@@ -29,14 +29,14 @@ async function getTeamById(projectId, ...includes) {
     return team
 }
 
-async function getAllTeams() {
+export async function getAllTeams() {
     const teams = await Team.findAll()
     if(!teams) throw new NotInDatabaseException(`The Team Database appears to be empty!`)
 
     return teams
 }
 
-async function getAchievementByName(achievementName) {
+export async function getAchievementByName(achievementName) {
     const achievement = await Achievement.findOne({
         where: { name: achievementName }
     })
@@ -45,7 +45,7 @@ async function getAchievementByName(achievementName) {
     return achievement
 }
 
-async function createStudent({ id, name, username }, t) {
+export async function createStudent({ id, name, username }, t) {
     return await Student.create({
         userId: id,
         name,
@@ -53,7 +53,7 @@ async function createStudent({ id, name, username }, t) {
     }, { transaction: t })
 }
 
-async function createTeam({ id, name, group, year }, students) {
+export async function createTeam({ id, name, group, year }, students) {
 
     //https://sequelize.org/master/manual/transactions.html
     const t = await db.transaction();
@@ -86,7 +86,7 @@ async function createTeam({ id, name, group, year }, students) {
     }
 }
 
-async function createAchievement(name) {
+export async function createAchievement(name) {
     return await Achievement.create({ name })
 }
 
@@ -95,7 +95,7 @@ function getIncludedModels(includes) {
 }
 
 
-export {
+export default {
     getStudentById,
     getTeamById,
     getAllTeams,

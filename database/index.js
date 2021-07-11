@@ -24,7 +24,7 @@ const models = [
 ];
 
 for (const setupModel of models) {
-    setupModel(sequelize)
+    setupModel(sequelize, Sequelize)
 }
 
 setupAssociations(sequelize)

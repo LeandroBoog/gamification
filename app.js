@@ -2,10 +2,10 @@
 import config from './config'
 import express from 'express'
 import routes from './routes'
+import cors from "cors"
 
 
 const app = express()
-const cors = require('cors')
 
 app.use(cors())
 app.use(express.json())

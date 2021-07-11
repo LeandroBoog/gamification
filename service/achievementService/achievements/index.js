@@ -1,20 +1,33 @@
 
+// --- first imports ---
+import nightOwl from "./nightOwl";
+import typewriter from "./typewriter";
+import passingExercises from "./passingExercises"
+
+// --- second imports ---
+import passedAllExercisesFirstTry from "./passedAllExercisesFirstTry";
+import passedAllExercisesUsingSecondChance from "./passedAllExercisesUsingSecondChance";
+
+// --- last imports ---
+import getXAchievements from "./getXAchievements"
+
+
 const first = [
-    await import('./nightOwl'),
-    await import('./typewriter'),
-    ...await import('./passingExercises'),
+    nightOwl,
+    typewriter,
+    ...passingExercises,
 ]
 
 const second = [
-    await import('./passedAllExercisesFirstTry'),
-    await import('./passedAllExercisesUsingSecondChance')
+    passedAllExercisesFirstTry,
+    passedAllExercisesUsingSecondChance
 ]
 
 const last = [
-    ...await import('./getXAchievements')
+    ...getXAchievements
 ]
 
-export {
+export default {
     first,
     second,
     last
