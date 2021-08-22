@@ -7,8 +7,8 @@ export default {
     PORT: 3000,
 
     GITLAB_INSTANCE: "gitlab.ibr.cs.tu-bs.de",
-    GITLAB_READ_TOKEN: "f2Fweqd5ZhS-ja4yHKZx",
-    GITLAB_WRITE_TOKEN: "CHZbVx9rTT8nChYtEfrm",
+    GITLAB_READ_TOKEN: "",
+    GITLAB_WRITE_TOKEN: "",
     GITLAB_GROUP_NAME: "bs-test-groups",
     //GITLAB_GROUP_NAME: "ws2021-bs-studs",
     STUDENT_GITLAB_RANK: 'Developer',
