@@ -1,6 +1,6 @@
 
-import getFiveAchievements from "./getFiveAchievements";
-import getTenAchievements from "./getTenAchievements";
+import getFiveAchievements from "./getFiveAchievements.js";
+import getTenAchievements from "./getTenAchievements.js";
 
 
 export default [

@@ -1,7 +1,7 @@
 
-import RequestHandler from "../lib/RequestHandler";
-import { updateTeam } from "../service/achievementService";
-import { deleteWebhookFromTeam } from "../lib/gitlabApiManager";
+import RequestHandler from "../lib/RequestHandler.js";
+import { updateTeam } from "../service/achievementService/index.js";
+import { deleteWebhookFromTeam } from "../lib/gitlabApiManager.js";
 
 
 class WebHookController {

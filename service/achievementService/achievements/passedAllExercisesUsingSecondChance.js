@@ -1,8 +1,8 @@
 
-import allExercises from './passingExercises'
+import allExercises from './passingExercises/index.js'
 
 
-async function passedAllExercisesFirstTry({ team }) {
+async function passedAllExerciseUsingSecondChance({ team }) {
     if(!team.stat.usedSecondChance) return false
     const gottenAchievements = (await team.getAchievements()).map(achievement => achievement.name)
     return allExercises.every(achievement => gottenAchievements.includes(achievement.name))
@@ -10,5 +10,5 @@ async function passedAllExercisesFirstTry({ team }) {
 
 export default {
     name: "Comeback",
-    check: passedAllExercisesFirstTry
+    check: passedAllExerciseUsingSecondChance
 }

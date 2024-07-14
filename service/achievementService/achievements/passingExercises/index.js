@@ -1,11 +1,11 @@
 
-import passedFirstExercise from "./passedFirstExercise";
-import passedSecondExercise from "./passedSecondExercise";
-import passedThirdExercise from "./passedThirdExercise";
-import passedFourthExercise from "./passedFourthExercise";
-import passedFifthExercise from "./passedFifthExercise";
-import passedSixthExercise from "./passedSixthExercise";
-import passedSeventhExercise from "./passedSeventhExercise";
+import passedFirstExercise from "./passedFirstExercise.js";
+import passedSecondExercise from "./passedSecondExercise.js";
+import passedThirdExercise from "./passedThirdExercise.js";
+import passedFourthExercise from "./passedFourthExercise.js";
+import passedFifthExercise from "./passedFifthExercise.js";
+import passedSixthExercise from "./passedSixthExercise.js";
+import passedSeventhExercise from "./passedSeventhExercise.js";
 
 
 export default [

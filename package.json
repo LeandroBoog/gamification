@@ -1,16 +1,13 @@
 {
-  "name": "gameification",
+  "name": "gamification",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "type": "module",
-  "config": {
-    "flag": "--experimental-specifier-resolution=node"
-  },
   "scripts": {
-    "start": "node ${npm_package_config_flag} app.js",
-    "resetDB": "node ${npm_package_config_flag} lib/init.js",
-    "debug": "npm run resetDB && npm run start"
+    "start": "node app.js",
+    "init": "node lib/init.js",
+    "debug": "npm run init && npm run start"
   },
   "author": "Leandro Boog",
   "license": "ISC",

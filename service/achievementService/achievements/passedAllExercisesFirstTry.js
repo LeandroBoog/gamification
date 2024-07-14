@@ -1,5 +1,5 @@
 
-import allExercises from './passingExercises'
+import allExercises from './passingExercises/index.js'
 
 
 async function passedAllExercisesFirstTry({ team }) {

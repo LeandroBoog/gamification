@@ -1,8 +1,8 @@
 
-import db from '../../database'
+import db from '../../database/index.js'
 
-import NotInDatabaseException from "../../Exceptions/NotInDatabaseException";
-import DatabaseEntryCreationException from "../../Exceptions/DatabaseEntryCreationException";
+import NotInDatabaseException from "../../Exceptions/NotInDatabaseException.js";
+import DatabaseEntryCreationException from "../../Exceptions/DatabaseEntryCreationException.js";
 
 
 const Student = db.models.student

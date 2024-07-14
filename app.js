@@ -1,7 +1,7 @@
 
-import config from './config'
+import config from './config.js'
 import express from 'express'
-import routes from './routes'
+import routes from './routes/index.js'
 import cors from "cors"
 
 
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', routes)
 
 const server = app.listen(config.PORT, () => {
-    console.log(`Example app listening at http://tl.ddns.timoschwarzer.com:${config.PORT}`)
+    console.log(`Example app listening at ${config.DOMAIN}:${config.PORT}/api`)
 })
 
 process.on('SIGTERM', () => {

@@ -1,7 +1,7 @@
 
 import express from "express";
-import WebHookController from '../controller/WebHookController'
-import { verifyToken } from '../lib/auth'
+import WebHookController from '../controller/WebHookController.js'
+import { verifyToken } from '../lib/auth.js'
 
 
 const router = express.Router()

@@ -1,6 +1,6 @@
 
 import express from "express";
-import { getTeamById } from '../service/databaseService'
+import { getTeamById } from '../service/databaseService/index.js'
 
 
 const router = express.Router()

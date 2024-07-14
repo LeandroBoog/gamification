@@ -1,8 +1,8 @@
 
-import updaters from "./updaters"
-import achievements from "./achievements"
+import updaters from "./updaters/index.js"
+import achievements from "./achievements/index.js"
 
-import { getTeamById, getAchievementByName } from "../databaseService"
+import { getTeamById, getAchievementByName } from "../databaseService/index.js"
 
 
 async function updateTeamStats(teamData, statsToUpdate) {

@@ -1,12 +1,12 @@
 
-import config from "../config"
+import config from "../config.js"
 import { Sequelize } from 'sequelize'
-import setupAssociations from "./setupAssociations";
+import setupAssociations from "./setupAssociations.js";
 
-import Achievement from './models/Achievement.model'
-import Stats from './models/Stats.model'
-import Student from './models/Student.model'
-import Team from './models/Team.model'
+import Achievement from './models/Achievement.model.js'
+import Stats from './models/Stats.model.js'
+import Student from './models/Student.model.js'
+import Team from './models/Team.model.js'
 
 
 const sequelize = new Sequelize({

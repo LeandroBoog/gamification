@@ -1,6 +1,6 @@
 
-import RequestHandler from "../lib/RequestHandler";
-import databaseService from "../service/databaseService"
+import RequestHandler from "../lib/RequestHandler.js";
+import databaseService from "../service/databaseService/index.js"
 
 
 class TeamController {

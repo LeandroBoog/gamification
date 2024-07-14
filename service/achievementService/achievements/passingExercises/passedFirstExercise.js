@@ -1,5 +1,5 @@
 
-import checkIfExerciseHasBeenPassed from "../../../../lib/checkIfExerciseHasBeenPassed";
+import checkIfExerciseHasBeenPassed from "../../../../lib/checkIfExerciseHasBeenPassed.js";
 
 
 const EXERCISE = {}
